@@ -29,6 +29,11 @@ public class RedisTestController {
 
         ValueOperations<String,List<User>> valueOperations = redisTemplate.opsForValue();
         List<User> list = valueOperations.get(key);
+        List<User> dataList1 = new ArrayList<>();
+        valueOperations.set("111",dataList1,30, TimeUnit.SECONDS);
+        List<User> list1 = valueOperations.get("111");
+        List<User> list2 = valueOperations.get("222");
+
 
         if (list == null){
             List<User> dataList = new ArrayList<>();
