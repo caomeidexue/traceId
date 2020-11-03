@@ -7,7 +7,7 @@ import java.util.concurrent.*;
 
 /**
  * 〈功能概述〉<br>
- *  logback 集成traceId
+ * logback 集成traceId
  *
  * @author: yiche
  * @date: 2020/8/18 2:57 下午

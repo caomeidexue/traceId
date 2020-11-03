@@ -39,6 +39,7 @@ public class TraceAsyncConfigurer implements AsyncConfigurer {
     public AsyncUncaughtExceptionHandler getAsyncUncaughtExceptionHandler() {
         return (throwable, method, params) -> log.error("asyc execute error, method={}, params={}", method.getName(), Arrays.toString(params));
     }
+
     public static class MdcTaskDecorator implements TaskDecorator {
         @Override
         public Runnable decorate(Runnable runnable) {

@@ -12,6 +12,7 @@ import javax.annotation.Resource;
 
 /**
  * 〈功能概述〉<br>
+ *
  * @author: yiche
  * @date: 2020/8/12 10:06 上午
  */
@@ -23,15 +24,15 @@ public class EsController {
     private EsService esService;
 
     @GetMapping("getMessage")
-    public Object getMessage(@RequestParam String id){
-      log.info("getMessage-param:{}",id);
-      Object object =  esService.getMessageById(id);
-      return object;
+    public Object getMessage(@RequestParam String id) {
+        log.info("getMessage-param:{}", id);
+        Object object = esService.getMessageById(id);
+        return object;
     }
 
     @RequestMapping("save")
-    public Object save(@RequestParam String id){
-        Object object =  esService.save(id);
+    public Object save(@RequestParam String id) {
+        Object object = esService.save(id);
         return object;
     }
 

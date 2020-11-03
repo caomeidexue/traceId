@@ -20,7 +20,7 @@ public class FullGcTestController {
     FullGcTestService fullGcTestService;
 
     @RequestMapping("testGC")
-    public Object testGC(){
+    public Object testGC() {
         fullGcTestService.testGC();
         return "success";
     }

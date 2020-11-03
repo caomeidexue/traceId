@@ -14,7 +14,7 @@ class StudyApplicationTests {
     }
 
     @Test
-    void testCC(){
+    void testCC() {
         MyAnnotation ann = getClass().getAnnotation(MyAnnotation.class);
         System.out.println(ann.value());
         System.out.println(ann.alias());
@@ -23,7 +23,7 @@ class StudyApplicationTests {
     }
 
     @Test
-    void testC2(){
+    void testC2() {
         MyAnnotation ann = AnnotationUtils.findAnnotation(getClass(),
                 MyAnnotation.class);
         System.out.println(ann.value());

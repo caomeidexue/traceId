@@ -18,13 +18,13 @@ public class FullGcTestServiceImpl implements FullGcTestService {
     @Override
     public void testGC() {
 
-        while (true){
-           int number = new Random().nextInt(10) + 1;
+        while (true) {
+            int number = new Random().nextInt(10) + 1;
             System.out.println(number);
-           if (number == 5){
-               System.gc();
-               System.out.println("FUllGC");
-           }
+            if (number == 5) {
+                System.gc();
+                System.out.println("FUllGC");
+            }
         }
     }
 }

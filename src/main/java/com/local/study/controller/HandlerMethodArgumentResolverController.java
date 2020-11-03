@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping
 public class HandlerMethodArgumentResolverController {
     @PostMapping("/testHandler")
-    public Object testObject(Integer aaa, @RequestParam Integer userId , @RequestUser(name = "userId") Integer id){
+    public Object testObject(Integer aaa, @RequestParam Integer userId, @RequestUser(name = "userId") Integer id) {
 
         System.out.println(aaa);
         System.out.println(userId);

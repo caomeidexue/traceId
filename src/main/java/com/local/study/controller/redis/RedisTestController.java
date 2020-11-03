@@ -25,24 +25,24 @@ public class RedisTestController {
     private RedisTemplate redisTemplate;
 
     @RequestMapping("getString")
-    public Object getStringKey(@RequestParam String key){
+    public Object getStringKey(@RequestParam String key) {
 
-        ValueOperations<String,List<User>> valueOperations = redisTemplate.opsForValue();
+        ValueOperations<String, List<User>> valueOperations = redisTemplate.opsForValue();
         List<User> list = valueOperations.get(key);
         List<User> dataList1 = new ArrayList<>();
-        valueOperations.set("111",dataList1,30, TimeUnit.SECONDS);
+        valueOperations.set("111", dataList1, 30, TimeUnit.SECONDS);
         List<User> list1 = valueOperations.get("111");
         List<User> list2 = valueOperations.get("222");
 
 
-        if (list == null){
+        if (list == null) {
             List<User> dataList = new ArrayList<>();
-            dataList.add(new User("jiang","1",10));
-            dataList.add(new User("wang","2",15));
-            dataList.add(new User("qi","3",20));
-            valueOperations.set(key,dataList,10, TimeUnit.SECONDS);
+            dataList.add(new User("jiang", "1", 10));
+            dataList.add(new User("wang", "2", 15));
+            dataList.add(new User("qi", "3", 20));
+            valueOperations.set(key, dataList, 10, TimeUnit.SECONDS);
             return dataList;
-        }else {
+        } else {
             return list;
         }
 
@@ -50,13 +50,13 @@ public class RedisTestController {
 
 
     @RequestMapping("hash")
-    public Object getHash(@RequestParam String key){
+    public Object getHash(@RequestParam String key) {
 
         HashOperations hashOperations = redisTemplate.opsForHash();
-        Map<String,String> map = new HashMap<>();
-        map.put("jiangKey","jiangValue");
-        map.put("wangKey","wangValue");
-        hashOperations.putAll(key,map);
+        Map<String, String> map = new HashMap<>();
+        map.put("jiangKey", "jiangValue");
+        map.put("wangKey", "wangValue");
+        hashOperations.putAll(key, map);
         Object jiang = hashOperations.get(key, "jiangKey");
         List values = hashOperations.values(key);
         Map entries = hashOperations.entries(key);
@@ -64,7 +64,7 @@ public class RedisTestController {
         Set keys = hashOperations.keys(key);
 
 
-        return  "success";
+        return "success";
 
     }
 }

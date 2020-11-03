@@ -25,18 +25,18 @@ public class FuntionInterFaceTest {
         //一下测试biFunction 接口
         int computeBiFunction = test.computeBiFunction(2, 3, (a, b) -> a + b);
         //15
-        int computeBiFunction2 = test.computeBiFunction2(2, 3, (a, b) -> a + b,a->a*3);
+        int computeBiFunction2 = test.computeBiFunction2(2, 3, (a, b) -> a + b, a -> a * 3);
 
 
         System.out.println(computeBiFunction2);
     }
 
-    public int compute(int a, Function<Integer,Integer> function){
+    public int compute(int a, Function<Integer, Integer> function) {
         Integer apply = function.apply(a);
         return apply;
     }
 
-    public String convert(int a, Function<Integer,String> function){
+    public String convert(int a, Function<Integer, String> function) {
         String apply = function.apply(a);
         return apply;
     }
@@ -51,11 +51,11 @@ public class FuntionInterFaceTest {
         return function1.andThen(function2).apply(a);
     }
 
-    public int computeBiFunction(int a , int b , BiFunction<Integer,Integer,Integer> biFunction){
-        return biFunction.apply(a,b);
+    public int computeBiFunction(int a, int b, BiFunction<Integer, Integer, Integer> biFunction) {
+        return biFunction.apply(a, b);
     }
 
-    public int computeBiFunction2(int a , int b , BiFunction<Integer,Integer,Integer> biFunction,Function<Integer,Integer> function){
-        return biFunction.andThen(function).apply(a,b);
+    public int computeBiFunction2(int a, int b, BiFunction<Integer, Integer, Integer> biFunction, Function<Integer, Integer> function) {
+        return biFunction.andThen(function).apply(a, b);
     }
 }

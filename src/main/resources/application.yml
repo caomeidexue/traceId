@@ -1,3 +1,12 @@
+app:
+  id: jiang-study
+apollo:
+  meta: http://localhost:8080
+  bootstrap:
+    enabled: true
+    namespaces: application,com.ibt.common-v2
+
+
 spring:
   data:
     elasticsearch:
@@ -16,6 +25,9 @@ spring:
 logging:
   pattern:
     console: '%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(%5p) %clr(${PID:- }){magenta} %clr(---){faint} %clr([%15.15t]){faint} %clr([%X{traceId}]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n%wEx'
-
-
+gerritUrl: http://192.168.15.177
+gerritUname: gerrit
+gerritPW: gerrit
+server:
+  port: 8082
 

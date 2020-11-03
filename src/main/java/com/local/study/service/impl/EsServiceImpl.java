@@ -31,13 +31,14 @@ public class EsServiceImpl implements EsService {
 
     private final RestHighLevelClient restHighLevelClient;
     private final String indexName = "indexname";
+
     @Override
     public Object getMessageById(String id) {
         try {
             GetRequest request = new GetRequest(indexName, id);
             GetResponse response = restHighLevelClient.get(request, RequestOptions.DEFAULT);
             return response.getSource();
-        }catch (IOException e){
+        } catch (IOException e) {
             return null;
         }
 
@@ -46,22 +47,22 @@ public class EsServiceImpl implements EsService {
     @Override
     public Object save(String id) {
         int i = 0;
-        while (true){
+        while (true) {
             User user = new User();
             user.setAge(10);
-            user.setId(id+i);
-            user.setUserName("test"+i);
+            user.setId(id + i);
+            user.setUserName("test" + i);
             String json = JSON.toJSONString(user);
-            IndexRequest request = new IndexRequest(indexName).id(id+i).source(json, XContentType.JSON);
+            IndexRequest request = new IndexRequest(indexName).id(id + i).source(json, XContentType.JSON);
             try {
                 restHighLevelClient.index(request, RequestOptions.DEFAULT);
                 i++;
-                if (i ==10000){
+                if (i == 10000) {
                     System.gc();
                     System.out.println("fullGC-----------------");
                 }
                 System.out.println(i);
-            }catch (Exception e){
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         }

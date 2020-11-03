@@ -10,6 +10,7 @@ package com.local.study.service;
 public interface EsService {
     /**
      * 根据ID查询数据
+     *
      * @param id
      * @return
      */
@@ -17,6 +18,7 @@ public interface EsService {
 
     /**
      * 存储数据
+     *
      * @param id
      * @return
      */

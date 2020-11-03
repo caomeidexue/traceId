@@ -58,7 +58,7 @@ public class MyHandlerMethodArgumentResolver implements HandlerMethodArgumentRes
                 }
             }
 
-            if (paramVal == null && paramCombin.required()){
+            if (paramVal == null && paramCombin.required()) {
                 throw new Exception("");
             }
         }

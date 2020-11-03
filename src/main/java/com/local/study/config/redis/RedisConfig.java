@@ -51,12 +51,12 @@ public class RedisConfig {
 
     @Bean
     public GenericJackson2JsonRedisSerializer genericJackson2JsonRedisJsonSerializer() {
-        ObjectMapper objectMapper=new ObjectMapper();
+        ObjectMapper objectMapper = new ObjectMapper();
 //		objectMapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
 //		objectMapper.registerModule(new JavaTimeModule());
 //      objectMapper.registerModule((new SimpleModule()).addSerializer(new GenericJackson2JsonRedisSerializer.NullValueSerializer((String)null)));
         objectMapper.enableDefaultTyping(ObjectMapper.DefaultTyping.NON_FINAL, JsonTypeInfo.As.PROPERTY);
-        objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES,false);
+        objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
         return new GenericJackson2JsonRedisSerializer(objectMapper);
     }
 
@@ -95,7 +95,7 @@ public class RedisConfig {
     }
 
 
-    @Bean(name="lettuceConnectionFactory", destroyMethod = "destroy")
+    @Bean(name = "lettuceConnectionFactory", destroyMethod = "destroy")
     public LettuceConnectionFactory lettuceConnectionFactory() {
 
         //开启 自适应集群拓扑刷新和周期拓扑刷新
