@@ -13,5 +13,16 @@ public class StringFormatTest {
         char charA = 'a';
         String format1 = String.format("字母A：%c", charA);
         System.out.println(format);
+
+        String replace = replace();
+        System.out.println(replace);
+    }
+
+
+    public static String replace(){
+        String command = "appconfig -pid$$FILLPID$$";
+        int pid = 96273;
+        String  FILL_PID = "$$FILLPID$$";
+       return command.replace(FILL_PID, String.valueOf(pid));
     }
 }

@@ -1,10 +1,10 @@
 app:
   id: jiang-study
-apollo:
-  meta: http://localhost:8080
-  bootstrap:
-    enabled: true
-    namespaces: application,com.ibt.common-v2
+#apollo:
+#  meta: http://localhost:8080
+#  bootstrap:
+#    enabled: true
+#    namespaces: application,com.ibt.common-v2
 
 
 spring:

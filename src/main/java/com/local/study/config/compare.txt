@@ -1,0 +1,23 @@
+{
+            "project":"testPro6",
+            "change_id":"I2bef10c01fa7877ae60f8da033f0abe9130c867c",
+            "commit":{
+                "commit":"cbe436adbb6df8c8ec8e89e523dba7fa59c08002",
+                "parents":[
+                    {
+                        "commit":"4d046525f7aea21ba47d12f0c9ef046253cda482"
+                    }
+                ],
+                "author":{
+                    "name":"jiangqb",
+                    "email":"jiangqb@mail.bitauto.com",
+                    "date":"2020-09-08 09:23:14.000000000",
+                    "tz":480
+                },
+                "subject":"conflict"
+            },
+            "_change_number":158,
+            "_revision_number":1,
+            "_current_revision_number":1,
+            "status":"MERGED"
+        }

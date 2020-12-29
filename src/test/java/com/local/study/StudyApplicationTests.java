@@ -5,8 +5,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.core.annotation.AnnotationUtils;
 
-@SpringBootTest
-@MyAnnotation(value = "aa", alias = "bb")
+//@SpringBootTest
+//@MyAnnotation(value = "aa", alias = "bb")
 class StudyApplicationTests {
 
     @Test
