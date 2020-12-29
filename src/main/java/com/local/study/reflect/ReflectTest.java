@@ -27,6 +27,8 @@ public class ReflectTest {
             System.out.println(id);
         });
 
+        System.out.println("aaa");
+
     }
 
 
